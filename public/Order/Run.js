@@ -1,23 +1,15 @@
 "use strict";
 
-$(function() {	
-	
-	$.ajaxSetup({
-		headers:{
-			'X-CSRF-Token':$('meta[name="csrf-token"]').attr('content')
-		}
-	});
-	
-	
-	
-		var orderview = new OrderView({
-			el: $("#order_container"),
-			model: new Order()
-		}),
-		
-		//TEST
-			testmoduleview = new TestModuleView({
-				el: $("#testmodule")
-		})
-	
+$(function() {
+
+        var orderview = new App_Views_Order({
+            el: $("#order_container"),
+            model: new App_Models_Order()
+        }),
+
+        //TEST
+            testmoduleview = new App_Views_Test({
+                el: $("#testmodule")
+        })
+
 });
